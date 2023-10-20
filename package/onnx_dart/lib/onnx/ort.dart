@@ -512,62 +512,12 @@ class OrtSessionObjects {
 }
 
 String get ortDylibPath {
-  // final isTesting = !kIsWeb && Platform.environment['FLUTTER_TEST'] == 'true';
-  // if (isTesting) {
-  //   // defaultTargetPlatform is _always_ Android when running tests, so we need
-  //   // to query the "actual" platform
-  //   if (Platform.isWindows) {
-  //     return 'windows/onnx_runtime/onnxruntime-x64.dll';
-  //   } else if (Platform.isMacOS) {
-  //     return 'macos/onnx_runtime/osx/libonnxruntime.1.16.1.dylib';
-  //   } else if (Platform.isLinux) {
-  //     return 'linux/onnx_runtime/libonnxruntime.so.1.16.1';
-  //   } else {
-  //     throw 'Unsure how to load ORT during testing for this platform (${Platform.operatingSystem})';
-  //   }
-  // }
-  // switch (defaultTargetPlatform) {
-  //   case TargetPlatform.android:
-  //     throw 'Android runs using a platform-specific implementation, not FFI';
-  //   case TargetPlatform.fuchsia:
-  //     throw UnimplementedError();
-  //   case TargetPlatform.iOS:
-  //     throw 'iOS runs using a platform-specific implementation, not FFI';
-  //   case TargetPlatform.linux:
-  //     return 'libonnxruntime.so.1.16.1';
-  //   case TargetPlatform.macOS:
-  //     return 'libonnxruntime.1.16.1.dylib';
-  //   case TargetPlatform.windows:
-  //     return 'onnxruntime-x64.dll';
-  // }
+  
   return '/home/galaxeus/Documents/test/fonnx/example/build/linux/x64/debug/bundle/lib/libonnxruntime.so.1.16.1';
 }
 
 String get ortExtensionsDylibPath {
-  // final isTesting = !kIsWeb && Platform.environment['FLUTTER_TEST'] == 'true';
-  // if (isTesting) {
-  //   if (Platform.isMacOS) {
-  //     return 'macos/onnx_runtime/osx/libortextensions.0.9.0.dylib';
-  //   } else if (Platform.isLinux) {
-  //     return 'linux/onnx_runtime/libortextensions.so.0.9.0';
-  //   } else {
-  //     throw 'Unsure how to load ORT during testing for this platform (${Platform.operatingSystem})';
-  //   }
-  // }
-  // switch (defaultTargetPlatform) {
-  //   case TargetPlatform.android:
-  //     throw UnimplementedError();
-  //   case TargetPlatform.fuchsia:
-  //     throw UnimplementedError();
-  //   case TargetPlatform.iOS:
-  //     throw UnimplementedError();
-  //   case TargetPlatform.linux:
-  //     return 'libortextensions.so.0.9.0';
-  //   case TargetPlatform.macOS:
-  //     return 'libortextensions.0.9.0.dylib';
-  //   case TargetPlatform.windows:
-  //     throw UnimplementedError();
-  // }
+  
       return '/home/galaxeus/Documents/test/fonnx/example/build/linux/x64/debug/bundle/lib/libortextensions.so.0.9.0';
 }
 
