@@ -1,8 +1,8 @@
 name: onnx_dart
 description: onnx_dart library for make your program dart more easy.
 version: 0.0.0
-repository: https://github.com/azkadev/azkadev.git
-issue_tracker: https://github.com/azkadev/azkadev.git
+repository: https://github.com/azkadev/onnx.git
+issue_tracker: https://github.com/azkadev/onnx.git
 homepage: https://youtube.com/@azkadev
 
 
@@ -13,17 +13,17 @@ executables:
 environment:
   sdk: '>=3.0.0 <4.0.0'
 
-dependencies:
-  ffi: ^2.0.2
-  galaxeus_lib: ^0.0.74
-  path: ^1.8.2
-#   path: ^1.8.0
+# dependencies:
+#   ffi: ^2.0.2
+#   galaxeus_lib: ^0.0.74
+#   path: ^1.8.2
+# #   path: ^1.8.0
 
-dev_dependencies:
-  lints: ^2.1.0
-  msix: ^3.12.1
-  packagex: ^0.0.28
-  test: ^1.24.2
+# dev_dependencies:
+#   lints: ^2.1.0
+#   msix: ^3.12.1
+#   packagex: ^0.0.28
+#   test: ^1.24.2
 
 msix_config: 
   display_name: onnx_dart
@@ -42,4 +42,7 @@ packagex:
   flutter_commands:
     obfuscate: true
     split-debug-info: 0.0.5
+dependencies:
+  ffi: ^2.1.0
+  path: ^1.8.3
   
