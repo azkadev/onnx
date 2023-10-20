@@ -5,8 +5,7 @@ import 'whisper_native.dart';
 // if (dart.library.js) 'whisper_web.dart';
 
 import 'dart:io';
- 
- 
+
 import 'dart:async';
 
 abstract class Whisper {
@@ -21,16 +20,23 @@ abstract class Whisper {
   Future<String> doInference(Uint8List bytes);
 }
 
-
-
 void _runVerificationTest() async {
   final modelPath = await getModelPath('assets/models/whisper/whisper_tiny.onnx');
-  final bytes = File("/home/galaxeus/Documents/test/fonnx/example/assets/audio_sample.wav").readAsBytesSync();
+  final bytes = File("/home/galaxeus/Documents/galaxeus/app/onnx/package/onnx_dart/samples_jfk.wav").readAsBytesSync();
   final whisper = Whisper.load(modelPath);
   // final wavFile = await rootBundle.load('assets/audio_sample.wav');
   final result = await whisper.doInference(bytes);
   // setState(() {
-  print(result.trim() == 'The rain and Spain falls mainly on the plane.');
+  //
+  print("""
+
+-------- result ---------
+
+${result}
+
+-------------------------
+""");
+  // print(result.trim() == 'The rain and Spain falls mainly on the plane.');
   // _verifyPassed = result.trim() == 'The rain and Spain falls mainly on the plane.';
   // });
 }
@@ -47,7 +53,7 @@ void _runPerformanceTest() async {
 
 Future<String> testPerformance(Whisper whisper) async {
   // final wavFile = await rootBundle.load('assets/audio_sample.wav');
-  final bytes = File("/home/galaxeus/Documents/test/fonnx/example/assets/audio_sample.wav").readAsBytesSync();
+  final bytes = File("/home/galaxeus/Documents/galaxeus/app/onnx/package/onnx_dart/samples_jfk.wav").readAsBytesSync();
   const iterations = 3;
   final Stopwatch sw = Stopwatch();
   for (var i = 0; i < iterations; i++) {
@@ -73,7 +79,7 @@ Future<String> getModelPath(String modelFilenameWithExtension) async {
 }
 
 void main() {
-  print("sa");
+  // print("sa");
   _runVerificationTest();
   _runPerformanceTest();
 }

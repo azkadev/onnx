@@ -1,7 +1,6 @@
 import 'dart:ffi';
 import 'dart:typed_data';
 
-
 import 'package:ffi/ffi.dart';
 // import 'package:flutter/foundation.dart';
 
@@ -123,27 +122,21 @@ class WhisperNative implements Whisper {
     sw.reset();
     sw.start();
     final outputTensorDataPointer = calloc<Pointer<Void>>();
-    objects.api
-        .getTensorMutableData(outputValues.value, outputTensorDataPointer);
+    objects.api.getTensorMutableData(outputValues.value, outputTensorDataPointer);
 
     final tensorTypeAndShape = calloc<Pointer<OrtTensorTypeAndShapeInfo>>();
     objects.api.getTensorTypeAndShape(outputValues.value, tensorTypeAndShape);
     final tensorElementType = calloc<Int32>();
-    objects.api
-        .getTensorElementType(tensorTypeAndShape.value, tensorElementType);
-    assert(tensorElementType.value ==
-        ONNXTensorElementDataType.ONNX_TENSOR_ELEMENT_DATA_TYPE_STRING);
+    objects.api.getTensorElementType(tensorTypeAndShape.value, tensorElementType);
+    assert(tensorElementType.value == ONNXTensorElementDataType.ONNX_TENSOR_ELEMENT_DATA_TYPE_STRING);
 
     final stringLengthPtr = calloc<Size>();
-    objects.api
-        .getStringTensorElementLength(outputValues.value, 0, stringLengthPtr);
+    objects.api.getStringTensorElementLength(outputValues.value, 0, stringLengthPtr);
     final stringLength = stringLengthPtr.value;
     final stringPtr = calloc<Uint8>(stringLength);
-    objects.api.getStringTensorElement(
-        outputValues.value, stringLength, 0, stringPtr.cast<Void>());
+    objects.api.getStringTensorElement(outputValues.value, stringLength, 0, stringPtr.cast<Void>());
     final string = stringPtr.cast<Utf8>().toDartString(length: stringLength);
-
-
+    // print(string);
     sw.stop();
     sw.reset();
     sw.start();
@@ -162,6 +155,7 @@ class WhisperNative implements Whisper {
     calloc.free(runOptionsPtr);
     calloc.free(outputTensorDataPointer);
     sw.stop();
+    
     print('cleanup took ${sw.elapsedMilliseconds}ms');
     return string;
   }
