@@ -17,6 +17,23 @@
 
    I need a lot of internet quota to maintain this project, if you don't mind please sponsor me (currently my internet quota is slow and limited)
    
+
+## Mendapatkan Model ONNX
+### Hugging Face
+[🤗 Hugging Face](https://huggingface.co/models) memiliki banyak koleksi model, termasuk banyak yang berformat ONNX. 90% modelnya adalah Pytorch, yang dapat dikonversi ke ONNX.
+
+Berikut adalah pencariannya [ONNX models](https://huggingface.co/models?library=onnx&sort=trending). 
+
+### Ekspor ONNX dari Pytorch, Tensorflow, & lainnya
+Sebuah Alat command-line di panggil `optimum-cli` dari HuggingFace mengonversi model Pytorch dan Tensorflow. Ini mencakup sebagian besar model. `optimum-cli` juga dapat mengkuantisasi model, mengurangi ukuran model secara signifikan, biasanya dengan dampak akurasi yang dapat diabaikan.
+
+Lihat [official documentation](https://huggingface.co/docs/optimum/exporters/onnx/usage_guides/export_a_model) / Petunjuk Cepat [snippet on GitHub](https://github.com/huggingface/optimum#run-the-exported-model-using-onnx-runtime).  
+Alat lain yang mengotomatiskan konversi ke ONNX adalah [HFOnnx](https://neuml.github.io/txtai/pipeline/train/hfonnx/). Itu digunakan untuk mengekspor model penyematan teks di repo ini. Keunggulannya mencakup ukuran model yang jauh lebih kecil, dan menggabungkan pasca-pemrosesan (penggabungan) ke dalam model itu sendiri.
+
+- Pengantar singkat tentang cara kerja format & waktu proses model ONNX [huggingface.com](https://huggingface.co/docs/optimum/onnxruntime/concept_guides/onnx)
+- [Netron](https://netron.app/) memungkinkan Anda melihat model ONNX, memeriksa grafik runtime, dan mengekspornya ke format lain
+
+  
 ### Tested On
 
 | No | Device        | Os           | Ram  | CPU             |
