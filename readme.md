@@ -70,3 +70,10 @@ import 'package:onnx_dart/onnx_dart.dart';
 ### Model Example Now
 
 - [x] [Whisper Audio To Text](package/onnx_dart/example/whisper)
+
+
+## Refferensi Sumber Belajar
+
+1. [ONNX-AI](https://onnx.ai/)
+2. [FONNX](https://github.com/Telosnex/fonnx)
+ 
