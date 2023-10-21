@@ -91,6 +91,7 @@ import 'package:onnx_dart/onnx_dart.dart';
 
 ## Refferensi Sumber Belajar
 
-1. [ONNX-AI](https://onnx.ai/)
-2. [FONNX](https://github.com/Telosnex/fonnx)
+1. [ONNX](https://github.com/onnx/onnx)
+2. [ONNX Runtime](https://github.com/microsoft/onnxruntime)
+3. [FONNX](https://github.com/Telosnex/fonnx)
  
