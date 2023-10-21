@@ -75,7 +75,7 @@ Future<String> testPerformance(Whisper whisper) async {
 }
 
 Future<String> getModelPath(String modelFilenameWithExtension) async {
-  return "/home/galaxeus/Documents/test/fonnx/example/assets/models/whisper/whisper_tiny.onnx";
+  return "/home/galaxeus/Documents/models/whisper_small.onnx";
 }
 
 void main() {

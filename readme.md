@@ -7,6 +7,13 @@
 
 ---
 
+### Update And Maintance
+
+ - Indonesian:
+   
+   Saya membutuhkan kuota internet banyak untuk maintance project ini, jika anda tidak keberatan silahkan sponsor saya (saat ini kuota internet saya lambat dan terbatas)
+   
+ - English:
 ### Tested On
 
 | No | Device        | Os           | Ram  | CPU             |
@@ -42,19 +49,21 @@ cmake --build .
 ### Install Library
 
 ```bash
-dart pub add onnx
+dart pub add onnx_dart
 ```
 
 or flutter
 
 ```bash
-dart pub add onnx_flutter
+dart pub add onnx_dart onnx_flutter
 ```
 
 ### Import Library
 
 ```dart
-import 'package:onnx/onnx.dart';
+import 'package:onnx_dart/onnx_dart.dart';
 ```
 
+### Model Example Now
 
+- [x] [Whisper Audio To Text](package/onnx_dart/example/whisper)

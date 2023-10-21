@@ -1,8 +1,8 @@
 name: onnx_flutter
-description: A new Flutter FFI plugin project.
+description: A new onnx flutter library with ffi.
 version: 0.0.0
-repository: https://github.com/azkadev/azkadev.git
-issue_tracker: https://github.com/azkadev/azkadev.git
+repository: https://github.com/azkadev/onnx.git
+issue_tracker: https://github.com/azkadev/onnx.git
 homepage: https://youtube.com/@azkadev
 
 environment:
