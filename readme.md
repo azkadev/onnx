@@ -14,6 +14,9 @@
    Saya membutuhkan kuota internet banyak untuk maintance project ini, jika anda tidak keberatan silahkan sponsor saya (saat ini kuota internet saya lambat dan terbatas)
    
  - English:
+
+   I need a lot of internet quota to maintain this project, if you don't mind please sponsor me (currently my internet quota is slow and limited)
+   
 ### Tested On
 
 | No | Device        | Os           | Ram  | CPU             |
