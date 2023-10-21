@@ -3,13 +3,13 @@ import 'dart:typed_data';
 import 'whisper.dart';
 
 
-Whisper getWhisper(String path) => WhisperWeb(path);
+WhisperClass getWhisper(String path) => Whisper(path);
 
-class WhisperWeb implements Whisper {
+class Whisper implements WhisperClass {
   @override
   final String modelPath;
 
-  WhisperWeb(this.modelPath);
+  Whisper(this.modelPath);
 
   @override
   Future<String> doInference(Uint8List bytes) {

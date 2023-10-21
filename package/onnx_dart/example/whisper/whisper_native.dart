@@ -1,22 +1,19 @@
 import 'dart:ffi';
 import 'dart:typed_data';
 
-import 'package:ffi/ffi.dart';
-// import 'package:flutter/foundation.dart';
-
-// import 'package:fonnx/models/whisper/whisper.dart';
+import 'package:ffi/ffi.dart'; 
 import 'package:onnx_dart/onnx/ort.dart';
 import 'package:onnx_dart/onnx/ort_ffi_bindings.dart' hide calloc, free;
 
 import 'whisper.dart';
 
-Whisper getWhisper(String path) => WhisperNative(path);
+WhisperClass getWhisper(String path) => Whisper(path);
 
-class WhisperNative implements Whisper {
+class Whisper implements WhisperClass {
   @override
   final String modelPath;
   OrtSessionObjects? _sessionObjects;
-  WhisperNative(this.modelPath);
+  Whisper(this.modelPath);
 
   @override
   Future<String> doInference(Uint8List bytes) {

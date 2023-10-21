@@ -8,22 +8,25 @@ import 'dart:io';
 
 import 'dart:async';
 
-abstract class Whisper {
-  static Whisper? _instance;
-  String get modelPath;
+class WhisperClass {
+  static WhisperClass? _instance;
+  String get modelPath => "";
 
-  static Whisper load(String path) {
+  static WhisperClass load(String path) {
+    
     _instance ??= getWhisper(path);
     return _instance!;
   }
 
-  Future<String> doInference(Uint8List bytes);
+  Future<String> doInference(Uint8List bytes) async {
+    return "";
+  }
 }
 
 void _runVerificationTest() async {
   final modelPath = await getModelPath('assets/models/whisper/whisper_tiny.onnx');
   final bytes = File("/home/galaxeus/Documents/galaxeus/app/onnx/package/onnx_dart/samples_jfk.wav").readAsBytesSync();
-  final whisper = Whisper.load(modelPath);
+  final whisper = Whisper(modelPath);
   // final wavFile = await rootBundle.load('assets/audio_sample.wav');
   final result = await whisper.doInference(bytes);
   // setState(() {
@@ -43,7 +46,7 @@ ${result}
 
 void _runPerformanceTest() async {
   final modelPath = await getModelPath('assets/models/whisper/whisper_tiny.onnx');
-  final whisper = Whisper.load(modelPath);
+  final whisper = Whisper(modelPath);
   final result = await testPerformance(whisper);
   print(result);
   // setState(() {
